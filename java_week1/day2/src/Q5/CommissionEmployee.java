@@ -1,6 +1,8 @@
-package Q4;
+package Q5;
 
-public class CommissionEmployee extends Employee{
+
+
+public class CommissionEmployee extends Employee {
     private double salespercent;
     private double weeklysale;
     public CommissionEmployee(String name, String empid,double salespercent,double weeklysale) {
