@@ -1,0 +1,19 @@
+package Q3;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
+public class Serialization {
+    public static  void main(String[] args) {
+        Employee emp = new Employee(101, "Alice", new Address("New York", "NY"), 75000.0);
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("serialised.txt"))) {
+            oos.writeObject(emp);
+            System.out.println("Employee object serialized.");
+        } catch (IOException e) {
+            System.err.println("Serialization error: " + e.getMessage());
+        }
+        
+
+    }
+}

@@ -1,0 +1,31 @@
+package Q5;
+
+public class Registration {
+    private String username;
+    private String usercountry;
+
+    public Registration(String username, String usercountry) {
+        this.username = username;
+        this.usercountry = usercountry;
+    }
+
+    public String getUsercountry() {
+        return usercountry;
+    }
+
+    public void setUsercountry(String usercountry) {
+        this.usercountry = usercountry;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    public void RegisterUser(String username,String usercountry) {
+        Registration r=new Registration(username,usercountry);
+    }
+
+}
