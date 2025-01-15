@@ -1,0 +1,60 @@
+package Q2;
+
+class Account {
+    private double balance;
+
+    public Account(double balance) {
+        this.balance = balance;
+    }
+
+    public double getBalance() {
+        return this.balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public synchronized void addamount(double amount) {
+      //  try {
+
+            balance += amount;
+            System.out.println(Thread.currentThread().getName() + " added: " + amount + ", Balance: " + balance);
+//            Thread.sleep(1000);
+//        } catch (InterruptedException e) {
+//            System.out.println("Thread Interrupted");
+//        }
+
+    }
+
+    public synchronized void subtract(double amount) {
+        //try {
+        //   Thread.sleep(1000);
+        //  if (balance >= amount) {
+        balance -= amount;
+        System.out.println(Thread.currentThread().getName() + " deducted: " + amount + ", Balance: " + balance);
+
+
+        //  }
+
+//        } catch (InterruptedException e) {
+//            System.out.println("Thread Interrupted");
+//        }
+//        public void addAmount (double amount){
+//            synchronized (this) {
+//                balance += amount;
+//                System.out.println(Thread.currentThread().getName() + " Added: " + amount + ", Balance: " + balance);
+//
+//
+//            }
+//        }
+//        public void subtract ( double amount){
+//            synchronized (this) {
+//                balance -= amount;
+//                System.out.println(Thread.currentThread().getName() + " deducted: " + amount + ", Balance: " + balance);
+//
+//
+//            }
+//        }
+    }
+}

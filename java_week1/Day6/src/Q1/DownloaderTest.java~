@@ -1,0 +1,14 @@
+package Q1;
+
+import java.util.List;
+
+public class DownloaderTest {
+    public static void main(String[] args) {
+        List<String> urls = FileReader.read();
+        for (String url : urls) {
+            Thread t = new Thread(new FastDownloader(url));
+            t.start();
+
+        }
+    }
+}
