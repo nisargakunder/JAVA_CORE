@@ -1,0 +1,35 @@
+package org.example;
+import java.sql.*;
+
+import java.sql.SQLException;
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+    public static void main(String[] args) {
+
+        try {
+            // Load the JDBC driver explicitly
+            Class.forName("com.mysql.cj.jdbc.Driver"); // For MySQL
+
+        } catch (ClassNotFoundException e) {
+            System.out.println("JDBC Driver not found.");
+            e.printStackTrace();
+
+        }
+        try{
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/trainingdb",
+                    "root", "123890");
+
+            System.out.printf("conn is done"+"\n");
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("select * from employee");
+            while (resultSet.next()){
+                System.out.println(resultSet.getString("name")+" "+resultSet.getString("salary"));
+            }
+
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+}
