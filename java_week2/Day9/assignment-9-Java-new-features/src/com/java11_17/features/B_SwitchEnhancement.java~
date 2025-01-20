@@ -26,7 +26,7 @@ public class B_SwitchEnhancement {
                 case 2, 4, 6 -> System.out.println("no meeting!");
 
                 case 7 -> System.out.println("Let's meet (although Sunday should be a free day, man!)!");
-             default -> System.out.println("We never gonna meet😄");
+             default -> System.out.println("We never gonna meet" + "\uD83D\uDE04");
             }
         };
 

@@ -31,7 +31,7 @@ public class Main {
         System.out.println("Delete The Record");
         bookService.deleteBook(2);
         System.out.println("Update Book Record");
-        book=new Book(3,"isbn1","Two Horses And Two Goat",1358,"R.K NARAYAN");
+        book=new Book(3,"isbn3","Two Horses And Two Goat",1358,"R.K NARAYAN");
         bookService.updateBook(3,book);
         }
     }

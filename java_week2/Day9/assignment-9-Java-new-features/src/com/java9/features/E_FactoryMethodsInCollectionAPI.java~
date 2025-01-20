@@ -8,7 +8,6 @@ public class E_FactoryMethodsInCollectionAPI {
         list.add("bar");
 //
     List<String> list2=Collections.unmodifiableList(list);
-    // cannot add as its immutable list2.add("sumit");
 
     // java 9 way of creating immutable collection
 

@@ -3,7 +3,7 @@ import  java.util.*;
 class Foo{
     @SafeVarargs
     public Foo(int ...list){
-     
+
     }
     @SafeVarargs
    static public void foo1(int ...list){
@@ -29,11 +29,13 @@ public class D_SafeVarargsDemo {
         foo(l1, l2);
 
     }
-
+    @SafeVarargs
     private static void foo(List<String> ...list) {
         for(List<String> data: list){
             System.out.println(data);
         }
 
+
     }
+    
 }

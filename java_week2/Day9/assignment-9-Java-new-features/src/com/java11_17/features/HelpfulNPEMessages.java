@@ -28,10 +28,10 @@ public class HelpfulNPEMessages {
   public static void main(String[] args) {
     try {
       HelpfulNPEMessages pm = new HelpfulNPEMessages();
-//      pm.example00SimpleNullVariable();
-//      pm.example01ComplexObjectNesting();
-//      pm.example02MethodReturnsNull();
-//      pm.example03ListWithNullElements();
+      pm.example00SimpleNullVariable();
+      pm.example01ComplexObjectNesting();
+      pm.example02MethodReturnsNull();
+      pm.example03ListWithNullElements();
       pm.example04Autoboxing();
     } catch (Throwable e) {
       System.err.println("Ooops, something went wrong with one of our examples:");

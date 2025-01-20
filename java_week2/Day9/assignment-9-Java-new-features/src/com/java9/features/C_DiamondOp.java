@@ -1,7 +1,5 @@
 package com.java9.features;
-import com.pojo.Book;
 
-import java.sql.Array;
 import  java.util.*;
 class A{
         void foo(){
@@ -18,6 +16,11 @@ class B extends  A{
 }
 public class C_DiamondOp {
     public static void main(String[] args) {
-
+     List <A> list=new ArrayList<>();
+     list.add(new A());
+     list.add(new B());
+     for(A a: list){
+         a.foo();
+     }
     }
 }

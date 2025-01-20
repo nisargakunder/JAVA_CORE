@@ -20,8 +20,6 @@ public class Main {
         Book book2=new Book(3,"isbn3","The Old Man and the Sea",100,"Ernest Hemingway");
         bookService.addBook(book2);
 
-
-
         List<Book> books=bookService.getAllBooks();
 
 

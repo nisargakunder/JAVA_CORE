@@ -29,11 +29,13 @@ public class D_SafeVarargsDemo {
         foo(l1, l2);
 
     }
-
+    @SafeVarargs
     private static void foo(List<String> ...list) {
         for(List<String> data: list){
             System.out.println(data);
         }
 
+
     }
+
 }

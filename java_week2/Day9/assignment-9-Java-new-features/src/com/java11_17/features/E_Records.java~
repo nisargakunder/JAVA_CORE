@@ -74,8 +74,8 @@ interface Employable{
 
 public class E_Records {
     public static void main(String[] args) {
-     Employable e = new Person("Nisarga","javalearner.com",1000);
-        System.out.println(e.getNetSalary());
+     Person p = new Person("Nisarga","javalearner@gmail.com",1000);
+        System.out.println(p.getEmail());
 
     }
 }
