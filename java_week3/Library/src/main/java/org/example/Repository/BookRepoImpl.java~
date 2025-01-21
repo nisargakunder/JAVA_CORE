@@ -55,7 +55,7 @@ public class BookRepoImpl implements BookRepo {
                 books.add(new Book(rs.getInt("id"),rs.getString("isbn"),rs.getString("title"),rs.getDouble("price"),rs.getString("author")));
             }
         } catch (SQLException e) {
-            throw new DaoException("Book not found",e);
+            throw new DaoException("");
         }
         return books;
     }
@@ -71,8 +71,7 @@ public class BookRepoImpl implements BookRepo {
                     book = new Book(rs.getInt("id"), rs.getString("isbn"), rs.getString("title"), rs.getDouble("price"), rs.getString("author"));
                 }
             }catch (SQLException e){
-
-                throw new DaoException("Book not found",e);
+                throw new RuntimeException(e);
             }
 
 
@@ -90,7 +89,7 @@ public class BookRepoImpl implements BookRepo {
             preparedStatement.setInt(5,id);
             preparedStatement.executeUpdate();
         }catch (SQLException e){
-            throw new DaoException("Book not found",e);
+            System.out.println(e.getMessage());
         }
 
     }

@@ -5,6 +5,8 @@ import org.example.Repository.BookRepo;
 import org.example.Repository.BookRepoImpl;
 import org.example.dto.Book;
 
+import java.util.List;
+
 public class BookServiceImpl implements BookService{
   private BookRepo bookRepo=new BookRepoImpl();
 
@@ -14,16 +16,22 @@ public class BookServiceImpl implements BookService{
     }
 
     @Override
+    public List<Book> getAllBooks() {
+        List<Book> books=bookRepo.getAllBooks();
+        return books;
+    }
+
+    @Override
     public void deleteBook(int id) {
         bookRepo.deleteBook(id);
 
     }
 
     @Override
-    public Book getBookById(int id) {
+    public Book getBookById(int id)  {
         Book b=bookRepo.getBookById(id);
         if (b==null){
-            throw new DaoException("Book not found");
+            throw new DaoException("Book not found",null);
         }
         else {
             return b;

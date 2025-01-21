@@ -9,6 +9,6 @@ public interface BookService {
     public void addBook(Book book);
     public void deleteBook(int id);
     public void updateBook(int id, Book book);
-    public Book getBookById(int id) throws SQLException;
+    public Book getBookById(int id) ;
 
 }
