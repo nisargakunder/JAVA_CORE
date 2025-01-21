@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.PriorityQueue;
 
+import static org.example.Main.logger;
+
 public class BookRepoImpl implements BookRepo {
     private Connection connection;
 
@@ -29,6 +31,7 @@ public class BookRepoImpl implements BookRepo {
 
 
         } catch ( SQLException e) {
+            logger.error(e);
             throw new DaoException("Book ALready Exist",e);
         }
         return book;
@@ -41,6 +44,7 @@ public class BookRepoImpl implements BookRepo {
         preparedStatement.setInt(1,id);
         preparedStatement.executeUpdate();
     }catch (SQLException e){
+        logger.error(e);
        throw new DaoException("Book not found",e);
     }
     }
@@ -55,6 +59,7 @@ public class BookRepoImpl implements BookRepo {
                 books.add(new Book(rs.getInt("id"),rs.getString("isbn"),rs.getString("title"),rs.getDouble("price"),rs.getString("author")));
             }
         } catch (SQLException e) {
+            logger.error(e);
             throw new DaoException("Book not found",e);
         }
         return books;
@@ -71,7 +76,7 @@ public class BookRepoImpl implements BookRepo {
                     book = new Book(rs.getInt("id"), rs.getString("isbn"), rs.getString("title"), rs.getDouble("price"), rs.getString("author"));
                 }
             }catch (SQLException e){
-
+                logger.error(e);
                 throw new DaoException("Book not found",e);
             }
 
@@ -90,6 +95,7 @@ public class BookRepoImpl implements BookRepo {
             preparedStatement.setInt(5,id);
             preparedStatement.executeUpdate();
         }catch (SQLException e){
+            logger.error(e);
             throw new DaoException("Book not found",e);
         }
 

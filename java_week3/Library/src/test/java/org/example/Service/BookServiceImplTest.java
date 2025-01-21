@@ -1,0 +1,75 @@
+package org.example.Service;
+
+import org.example.Exceptions.BookNotFoundException;
+import org.example.dto.Book;
+import org.junit.jupiter.api.BeforeEach;
+
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class BookServiceImplTest {
+
+    private BookService bookService;
+    private Book book;
+    @BeforeEach
+    void beforeEach() {
+        bookService = new BookServiceImpl();
+    }
+
+    @org.junit.jupiter.api.Test
+    void addBook() {
+        Book newBook = new Book(5, "158", "Two Horses And Two Goats", 2123, "R.K NARAYAN");
+        bookService.addBook(newBook);
+
+        Book retrievedBook = bookService.getBookById(5);
+        assertNotNull(retrievedBook, "The book is successfully added to the database.");
+        assertEquals(newBook, retrievedBook, "The retrieved book match the added book.");
+
+
+    }
+
+    @org.junit.jupiter.api.Test
+    void getAllBooks() {
+        List<Book> books=bookService.getAllBooks();
+        assertNotNull(books, "Books  retrieved from the database.");
+
+
+    }
+
+    @org.junit.jupiter.api.Test
+    @org.junit.jupiter.api.Order(value = 5)
+    void deleteBook() {
+        int bookId = 6;
+
+
+        bookService.deleteBook(bookId);
+
+        assertThrows(BookNotFoundException.class, () -> {
+            bookService.getBookById(bookId);
+        }, "Book is successfully deleted");
+
+    }
+
+    @org.junit.jupiter.api.Test
+    void getBookById() {
+        int bookId = 5; // Assuming a book with ID 1 exists in the database
+        Book retrievedBook = bookService.getBookById(bookId);
+
+        assertNotNull(retrievedBook);
+        assertEquals(bookId, retrievedBook.getId(), "The ID of the retrieved book  match the id passed.");
+    }
+
+    @org.junit.jupiter.api.Test
+    void updateBook() {
+        int id=5;
+        Book updatedBook = new  Book(5, "123", "Two Horses And Two Goats", 1238, "R.K NARAYAN");;
+        bookService.updateBook(id,updatedBook);
+
+        Book retrievedBook = bookService.getBookById(id);
+        assertNotNull(retrievedBook);
+        assertEquals(updatedBook.getPrice(),retrievedBook.getPrice(), "The Price updated successfully");
+
+
+    }
+}

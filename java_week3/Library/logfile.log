@@ -1,0 +1,6 @@
+INFO  | 2025-01-21 23:32:19 | [main] example.Main (Main.java:18) - Add Book Record
+INFO  | 2025-01-21 23:32:19 | [main] example.Main (Main.java:29) - Fetch All Book Records
+INFO  | 2025-01-21 23:32:19 | [main] example.Main (Main.java:32) - Delete The Record
+INFO  | 2025-01-21 23:32:19 | [main] example.Main (Main.java:34) - Update Book Record
+INFO  | 2025-01-21 23:33:59 | [main] example.Main (Main.java:18) - Add Book Record
+ERROR | 2025-01-21 23:33:59 | [main] Repository.BookRepoImpl (BookRepoImpl.java:34) - java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '1' for key 'book.PRIMARY'
