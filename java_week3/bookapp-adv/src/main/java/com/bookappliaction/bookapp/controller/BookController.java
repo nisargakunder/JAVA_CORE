@@ -14,6 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 public class BookController {
+
     @Value(("${key.message}"))
     private String message;
 

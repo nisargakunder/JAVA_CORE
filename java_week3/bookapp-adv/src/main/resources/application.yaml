@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: dev
+    active: test
   jpa:
     show-sql: true
     hibernate:
@@ -17,3 +17,10 @@ server:
   port: 8090
 key:
   message: welcome to bookstore-default
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+

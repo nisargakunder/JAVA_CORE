@@ -1,7 +1,7 @@
-package com.bookapplication.bookapp.controller;
+package com.bookappliaction.bookapp.controller;
 
-import com.bookapplication.bookapp.repo.Book;
-import com.bookapplication.bookapp.service.BookService;
+import com.bookappliaction.bookapp.repo.Book;
+import com.bookappliaction.bookapp.service.BookService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,6 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 public class BookController {
+    
     @Value(("${key.message}"))
     private String message;
 
