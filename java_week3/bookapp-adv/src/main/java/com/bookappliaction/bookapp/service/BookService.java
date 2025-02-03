@@ -15,4 +15,5 @@ public interface BookService {
     public Book findBookByTitle(String name);
     public Book findBookByAuthor(String author);
     public Book findBookByYear(int year);
+    public void evictBookCache();
 }

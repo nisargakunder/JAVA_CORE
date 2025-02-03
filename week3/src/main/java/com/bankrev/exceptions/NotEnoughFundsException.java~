@@ -1,0 +1,4 @@
+package com.bankrev.exceptions;
+
+public class NotEnoughFundsException {
+}

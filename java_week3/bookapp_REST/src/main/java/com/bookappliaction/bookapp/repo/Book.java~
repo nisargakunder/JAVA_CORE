@@ -21,10 +21,15 @@ public class Book {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private int id;
+    @NotEmpty(message="{book.title.absent}")
     private String title;
+    @NotEmpty(message = "{book.author.absent}")
     private String author;
+    @NotNull(message="{book.price.absent}")
+    @Range(min=10, max = 100000, message = "{book.price.invalid}")
     private BigDecimal price;
 
+    @NotNull(message="{book.year.absent}")
     private Integer year;
 
     public Book(String author, BigDecimal price, String title, Integer year) {

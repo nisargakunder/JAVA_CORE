@@ -1,0 +1,4 @@
+package com.bankrev.Aspect;
+
+public @interface Loggable {
+}

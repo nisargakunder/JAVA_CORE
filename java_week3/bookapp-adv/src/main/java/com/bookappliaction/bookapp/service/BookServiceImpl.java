@@ -4,6 +4,7 @@ import com.bookappliaction.bookapp.exceptions.BookNotFoundException;
 import com.bookappliaction.bookapp.repo.Book;
 import com.bookappliaction.bookapp.repo.BookRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,7 +26,9 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
+    @CacheEvict(value="bookcache",key="#id")
     public void deleteBook(int id) {
+
         bookRepo.deleteById(id);
     }
 
@@ -67,5 +70,9 @@ public class BookServiceImpl implements BookService {
     public Book updateBook(Book book, int id) {
         book.setPrice(book.getPrice());
         return bookRepo.save(book);
+    }
+    @CacheEvict(value="bookcache",allEntries=true)
+    @Override
+    public void evictBookCache(){
     }
 }
