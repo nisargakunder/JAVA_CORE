@@ -6,6 +6,8 @@ import com.productapp.repo.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 @Service
 public class ProductServiceImpl implements ProductService{
@@ -13,35 +15,83 @@ public class ProductServiceImpl implements ProductService{
 
     @Autowired
     public ProductServiceImpl(ProductRepo productRepo) {
+
         this.productRepo = productRepo;
     }
 
+
     @Override
-    public List<Product> getProducts() {
-        return productRepo.getProducts();
+    public Product getById(int id) {
+        return productRepo.findById(id).orElseThrow(() -> new ProductNotFoundException("Product not found"));
     }
 
     @Override
-    public Product getProductById(int id) {
-        Product product= productRepo.getById(id);
-        if(product!=null)
-            return product;
-        else
-            throw new ProductNotFoundException("Product not found");
+    public List<Product> getListOfAllProducts() {
+        return productRepo.getListOfAllProducts();
     }
 
     @Override
-    public Product addProduct(Product product) {
-        return productRepo.addProduct(product);
+    public List<Product> getListOfAllProductsBasedOnName(String name) {
+        return productRepo.getListOfAllProductsBasedOnName(name);
     }
 
     @Override
-    public Product updateProduct(int id, Product product) {
-        return productRepo.updateProduct(id, product);
+    public List<Product> getListOfAllProductsBasedOnNameV2(String name) {
+        return productRepo.getListOfAllProductsBasedOnNameV2(name);
     }
 
     @Override
-    public Product removeProduct(int id) {
-        return productRepo.removeProduct(id);
+    public List<Product> getListOfAllProductsBasedOnNameAndPrice(String name, BigDecimal price) {
+        return productRepo.getListOfAllProductsBasedOnNameAndPrice(name,price);
+    }
+
+    @Override
+    public List<Product> getListOfAllProductsBasedOnNameOrPrice(String name, BigDecimal price) {
+        return productRepo.getListOfAllProductsBasedOnNameOrPrice(name,price);
+    }
+
+    @Override
+    public List<Product> findByName(String name) {
+        return productRepo.findByName(name);
+    }
+
+    @Override
+    public List<Product> findByNameContaining(String name) {
+        return productRepo.findByNameContaining(name);
+    }
+
+    @Override
+    public List<Product> findByNameLike(String name) {
+        return productRepo.findByNameLike(name);
+    }
+
+    @Override
+    public List<Product> findByNameStartingWith(String name) {
+        return productRepo.findByNameStartingWith(name);
+    }
+
+    @Override
+    public List<Product> findByNameEndingWith(String name) {
+        return productRepo.findByNameEndingWith(name);
+    }
+
+    @Override
+    public List<Product> findByNameIgnoreCase(String name) {
+        return productRepo.findByNameIgnoreCase(name);
+    }
+
+    @Override
+    public List<Product> findByMfgDateAfter(LocalDate date) {
+        return productRepo.findByMfgDateAfter(date);
+    }
+
+    @Override
+    public List<Product> findByMfgDateBefore(LocalDate date) {
+        return productRepo.findByMfgDateBefore(date);
+    }
+
+    @Override
+    public List<Product> findByMfgDateBetween(LocalDate date1, LocalDate date) {
+        return productRepo.findByMfgDateBetween(date1,date);
     }
 }
