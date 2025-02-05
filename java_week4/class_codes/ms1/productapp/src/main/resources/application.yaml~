@@ -1,0 +1,32 @@
+server:
+  port: 8082
+spring:
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true
+
+  profiles:
+    active:
+      - "default"
+  application:
+    name: products
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8090/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
+  info:
+    env:
+      enabled: true

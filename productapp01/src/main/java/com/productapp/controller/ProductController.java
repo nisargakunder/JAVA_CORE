@@ -4,6 +4,7 @@ import com.productapp.repo.Product;
 import com.productapp.service.ProductService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -108,6 +109,24 @@ public class ProductController {
     public List<Product> findProductsByMfgDateBetween(@RequestParam String date1, @RequestParam String date2) {
         return productService.findByMfgDateBetween(LocalDate.parse(date1), LocalDate.parse(date2));
     }
+    
+    @GetMapping(path = "productsorted")
+    public List<Product> getAllProductSorted(@RequestParam(name="field")  String field) {
+        return productService.getAllProductSorted(field);
+    }
+
+    //productpage?offset=4&pageSize=20
+    @GetMapping(path = "productpage")
+    public Page<Product> getAllProductPage(@RequestParam(name="offset") int offset,@RequestParam(name="pageSize") int pageSize) {
+        return productService.getAllProductPage(offset, pageSize);
+    }
+
+    //productpagesorted?offset=4&pageSize=20&field=id
+    @GetMapping(path = "productpagesorted")
+    public Page<Product> getAllProductPageSorted(int offset, int pageSize, String field) {
+        return productService.getAllProductPageSorted(field, offset, pageSize);
+    }
+
 }
 
 //exception handling is a cross cutting concern so we have to use aop

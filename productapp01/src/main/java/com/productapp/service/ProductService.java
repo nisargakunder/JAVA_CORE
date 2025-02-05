@@ -1,6 +1,7 @@
 package com.productapp.service;
 
 import com.productapp.repo.Product;
+import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
@@ -37,5 +38,7 @@ public interface ProductService {
     List<Product> findByMfgDateBetween(LocalDate date1, LocalDate date);
 
 
-
+    public List<Product> getAllProductSorted(String field);
+    public Page<Product> getAllProductPage(int offset, int pageSize);
+    public Page<Product> getAllProductPageSorted(String field,int offset, int pageSize);
 }

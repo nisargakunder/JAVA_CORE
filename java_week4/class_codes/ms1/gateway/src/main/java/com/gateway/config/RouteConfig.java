@@ -1,0 +1,31 @@
+package com.gateway.config;
+
+import org.springframework.cloud.gateway.route.RouteLocator;
+import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import java.time.LocalDateTime;
+
+@Configuration
+public class RouteConfig {
+    @Bean
+    public RouteLocator productRouteConfig(RouteLocatorBuilder
+                                           routeLocatorBuilder){
+        return routeLocatorBuilder.routes().route(p->p.path("/productstore/products/**")
+                .filters(f->f.rewritePath("/productstore/products/(?<segment>.*)","/${segment}")
+                        .circuitBreaker(config->config.setName("productCircuitBreaker")
+                                .setFallbackUri("forward:/fallback"))
+                        .addRequestHeader("timeStamp",LocalDateTime.now().toString()))
+                       .uri("lb://products"))
+                .route(p->p.path("/productstore/coupons/**")
+                        .filters(f->f.rewritePath("/productstore/coupons/(?<segment>.*)","/${segment}")
+                                .circuitBreaker(config->config.setName("productCircuitBreaker")
+                                        .setFallbackUri("forward:/fallback"))
+                                .addRequestHeader("timeStamp",LocalDateTime.now().toString()))
+
+                        .uri("lb://coupons")).build();
+
+    }
+
+}

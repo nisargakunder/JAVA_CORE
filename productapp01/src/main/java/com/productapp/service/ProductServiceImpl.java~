@@ -5,7 +5,6 @@ import com.productapp.repo.Product;
 import com.productapp.repo.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -100,18 +99,16 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     public List<Product> getAllProductSorted(String field) {
-        return productRepo.findAll(Sort.by(Sort.Direction.DESC, field));
+        return List.of();
     }
 
     @Override
     public Page<Product> getAllProductPage(int offset, int pageSize) {
-        return productRepo.findAll(PageRequest.of(offset, pageSize));
+        productRepo.findAll(Sort.by(Sort.Direction.DESC,field));
     }
 
     @Override
     public Page<Product> getAllProductPageSorted(String field, int offset, int pageSize) {
-        return productRepo.findAll(PageRequest.of(offset, 			pageSize).withSort(Sort.by(field)));
+        return null;
     }
-
-
 }
