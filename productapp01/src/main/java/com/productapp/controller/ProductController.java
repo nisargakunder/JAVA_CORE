@@ -109,7 +109,7 @@ public class ProductController {
     public List<Product> findProductsByMfgDateBetween(@RequestParam String date1, @RequestParam String date2) {
         return productService.findByMfgDateBetween(LocalDate.parse(date1), LocalDate.parse(date2));
     }
-    
+
     @GetMapping(path = "productsorted")
     public List<Product> getAllProductSorted(@RequestParam(name="field")  String field) {
         return productService.getAllProductSorted(field);
