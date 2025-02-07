@@ -1,0 +1,4 @@
+package com.bankapplication.bank.dto;
+
+public class AuthRequest {
+}

@@ -1,0 +1,32 @@
+package com.gateway.config;
+
+
+import org.springframework.cloud.gateway.route.RouteLocator;
+import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
+
+import java.time.LocalDateTime;
+
+@Configuration
+public class RouteConfig {
+    @Bean
+    public RouteLocator employeeRouteConfig(RouteLocatorBuilder
+                                                    routeLocatorBuilder){
+        return routeLocatorBuilder.routes().route(p->p.path("/empappms/**")
+                        .filters(f->f.rewritePath("/empappms/(?<segment>.*)","/${segment}")
+                                .circuitBreaker(config->config.setName("employeeCircuitBreaker")
+                                        .setFallbackUri("forward:/fallback"))
+                                .addRequestHeader("timeStamp", LocalDateTime.now().toString()))
+                        .uri("lb://empapp"))
+                .route(p->p.path("/deptappms/**")
+                        .filters(f->f.rewritePath("/deptappms/(?<segment>.*)","/${segment}")
+                                .circuitBreaker(config->config.setName("employeeCircuitBreaker")
+                                        .setFallbackUri("forward:/fallback"))
+                                .addRequestHeader("timeStamp",LocalDateTime.now().toString()))
+
+                        .uri("lb://deptapp")).build();
+
+    }
+}

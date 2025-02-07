@@ -5,37 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61a69c4c-d119-4e76-9d3c-fd8cc16ee751" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../currency-gateway/gateway/src/main/java/com/gateway/config/RouteConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../currency-gateway/gateway/src/main/java/com/gateway/controller/FallbackController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../currency_app-1/currency-resttemplate/currency-conversion/src/main/java/com/currencyconversion/serviceproxy/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../currency_app/currency-conversion/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../currency_app/currency-conversion/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../currency_app/currency-conversion/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../currency_app/currency-conversion/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../currency_app/currency-conversion/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../currency_app/currency-conversion/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../currency_app/currency-conversion/src/main/java/com/currencyconversion/CurrencyConversionApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../currency_app/currency-conversion/src/main/java/com/currencyconversion/controller/CurrencyConversionController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../currency_app/currency-conversion/src/main/java/com/currencyconversion/dto/CurrencyConversionBean.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../currency_app/currency-conversion/src/main/java/com/currencyconversion/serviceproxy/CurrencyExchangeServiceProxy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../currency_app/currency-conversion/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../currency_app/currency-conversion/src/test/java/com/currencyconversion/CurrencyConversionApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../currency_app/currency-exchange/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../currency_app/currency-exchange/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../currency_app/currency-exchange/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../currency_app/currency-exchange/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../currency_app/currency-exchange/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../currency_app/currency-exchange/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../currency_app/currency-exchange/src/main/java/com/currencyexchange/CurrencyExchangeApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../currency_app/currency-exchange/src/main/java/com/currencyexchange/controller/CurrencyExchangeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../currency_app/currency-exchange/src/main/java/com/currencyexchange/repo/ExchangeValue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../currency_app/currency-exchange/src/main/java/com/currencyexchange/repo/ExchangeValueRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../currency_app/currency-exchange/src/main/java/com/currencyexchange/service/ExchangeService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../currency_app/currency-exchange/src/main/java/com/currencyexchange/service/ExchangeServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../currency_app/currency-exchange/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../currency_app/currency-exchange/src/test/java/com/currencyexchange/CurrencyExchangeApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../productapp01/src/main/java/com/productapp/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../productapp01/src/main/java/com/productapp/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../productapp01/src/main/java/com/productapp/service/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../productapp01/src/main/java/com/productapp/service/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/currency-conversion/src/main/java/com/currencyconversion/serviceproxy/CurrencyExchangeServiceProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/currency-conversion/src/main/java/com/currencyconversion/serviceproxy/CurrencyExchangeServiceProxy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,21 +31,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.CurrencyConversionApplication.executor": "Run",
-    "Application.CurrencyExchangeApplication.executor": "Run",
-    "Application.EurekaApplication.executor": "Run",
-    "Application.GatewayApplication.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "com.codeium.enabled": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/JAVA_CORE/java_week4/currency_App-2/currency-ZipKin"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.CurrencyConversionApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CurrencyExchangeApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EurekaApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/JAVA_CORE/java_week4/currency_App-2/currency-ZipKin&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
