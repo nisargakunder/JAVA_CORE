@@ -1,0 +1,4 @@
+package com.bookappliaction.bookapp.dto;
+
+public class Authenticate {
+}

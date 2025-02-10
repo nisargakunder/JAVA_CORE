@@ -1,0 +1,9 @@
+package com.bookappliaction.bookapp.repo;
+
+public class UserEntity {
+
+    private String name;
+    private String password;
+    
+
+}
