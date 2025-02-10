@@ -10,4 +10,4 @@ management:
     prometheus:
       enabled: true
     metrics:
-      enabled: true	
+      enabled: true
