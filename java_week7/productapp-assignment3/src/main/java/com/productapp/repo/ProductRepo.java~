@@ -1,0 +1,16 @@
+package com.productapp.repo;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface ProductRepo extends MongoRepository<Product, String> {
+    //crud
+    public Product save(Product product);
+    public List<Product> findAll();
+    public Product findById(String id);
+    public void deleteById(String id);
+    public Product update(String id, Product product);
+}
