@@ -24,7 +24,9 @@ public class ProductappApplication implements CommandLineRunner {
 		//String name, Integer qty, String vendor, Double cost
 
 		insert();
+
 	}
+
 
 	private void insert() {
 		productRepo.save(new Product("dell laptop", 30, "AB electronic", 5000000.0));
@@ -33,4 +35,5 @@ public class ProductappApplication implements CommandLineRunner {
 		productRepo.save(new Product("Book", 10, "AB electronic", 1000.0));
 		System.out.println("------------------------");
 	}
+
 }

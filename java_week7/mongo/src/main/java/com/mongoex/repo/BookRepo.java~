@@ -14,6 +14,6 @@ public Book findByAuthor(String author);
 public Book findByNameOrAuthor(String name,String author);
 @Query("{id: ?0}")
 public Book getBookByTdQuery(String id);
-@Query("{pages:{$lt<?0}}")
+@Query("{pages:{$lt:?0}}")
 public List<Book> getbyPagesless(int pages);
 }
